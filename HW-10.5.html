@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Кредитный калькулятор</title>
+  </head>
+
+  <body>
+    <ul>
+      <li>если клиенту нет 18 лет, то кредит он не получит</li>
+      <li>если клиенту от 18 до 21, то он может получить максимум 50000</li>
+      <li>если клиенту от 22 до 35, то он сможет получить максимум 400000</li>
+      <li>если клиенту от 36 до 65, то ему одобрят максимум 1000000</li>
+      <li>кредит могут выдавать суммами кратными 10000.</li>
+    </ul>
+
+    <script>
+      let age = prompt("Введите свой возраст");
+      let creditSumma = prompt("Введите сумму кредита");
+      let massege;
+      let notification = "";
+      if (creditSumma % 1000 > 0) {
+        notification = "\nВведите сумму кратную 1000.";
+      }
+      if (parseInt(age)) {
+        if (age < 18) {
+          massege = "Вам меньше 18 лет, в кредите отказано";
+        } else if (age > 17 && age < 21) {
+          massege = "Мы можем вам выдать максимум 50000";
+        } else if (age > 21 && age < 35) {
+          massege = "Мы можем вам выдать максимум 400000";
+        } else if (age > 35 && age < 65) {
+          massege = "Мы можем вам выдать максимум 1000000";
+        }
+        alert(`${massege}${notification}`);
+      }
+    </script>
+  </body>
+</html>
